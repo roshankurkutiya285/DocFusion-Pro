@@ -1,5 +1,5 @@
 import { Suspense, lazy, type FC } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AppLayout } from '@/components/layout/AppLayout'
 import { LoadingFallback } from '@/components/ui/LoadingFallback'
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary'
@@ -35,7 +35,7 @@ const SettingsPage = lazy(() =>
 
 export const App: FC = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ErrorBoundary fallbackTitle="Application Shell Error">
         <Routes>
           <Route path="/" element={<AppLayout />}>
@@ -115,7 +115,7 @@ export const App: FC = () => {
           </Route>
         </Routes>
       </ErrorBoundary>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
